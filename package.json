@@ -1,0 +1,18 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "main": "calculator.js",
+  "directories": {
+    "test": "test"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "author": "Arturo Mora-Rioja (amri@kea.dk)",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "jest": "^29.4.2"
+  },
+  "description": ""
+}
