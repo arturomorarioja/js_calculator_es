@@ -1,15 +1,28 @@
-'use strict';
 import { sum, subtract, divide } from '../calculator.js';
+
+/**
+ * Unit tests for calculator.js
+ * 
+ * The main focus of this file is not good unit test design, 
+ * but showcasing Jest's features
+ * 
+ * @author  Arturo Mora-Rioja
+ * @version 2.0.0 May 2026
+ */
 
 /**
  * Variable existence/function returns value
  */
 
-test('variable exists', () => {
+test('variable has value', () => {
     const valueExists = sum(3, 5);
-    const valueDoesNotExist = undefined;
 
     expect(valueExists).toBeDefined();
+});
+
+test('variable does not have value', () => {
+    const valueDoesNotExist = undefined;
+
     expect(valueDoesNotExist).not.toBeDefined();
 });
 
@@ -26,6 +39,8 @@ test('function returns value', () => {
 test('sum 3 and 8 equals 11', () => {
     const value = sum(3, 8);
 
+    // Anti-pattern: several assertions per test
+    // Broadly used in Jest, though
     expect(value).toBe(11);
     expect(value).toEqual(11);
     expect(value).not.toBeNaN();
@@ -109,6 +124,7 @@ describe.each(sumData)('sum ', (number) => {
  */
 describe('outer describe', () => {
     describe('inner describe', () => {
+        // "test" can be shortened to "it"
         it('test addition succeeds', () => {
             expect(sum(8, 4)).toBe(12);
         });
